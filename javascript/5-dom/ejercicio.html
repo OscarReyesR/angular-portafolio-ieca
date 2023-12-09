@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>JS & DOM</title>
+</head>
+
+<body>
+    <div style="display: flex">
+        <input type="text" id="inputEncabezado" placeholder="Ingresa el nuevo encabezado"
+        style="width:70%;margin-bottom:10px" />
+    </div>
+    <div style="display: flex">
+        <button id="btnActualizacion" onClick="modificarEncabezado()" style="margin-right: 10px">Establecer Encabezado</button>
+        <button id="btnUndo" disabled>Encabezado Anterior</button>
+    </div>
+    <h1 id="encabezado">...</h1>
+
+    <script>
+
+        /*
+        INSTRUCCIONES:
+        
+        1.  Codifica la función modificarEncabezado del botón "btnActualizacion" 
+            para que tome el valor del input "inputEncabezado" para cambiar el h1 "encabezado"
+
+        2.  Valida que el valor del input no sea vacío, si esta vacío notifica al usuario con alert() de que 
+            el valor no puede ser vacío
+
+        3.  Agrega el evento `click` al botón "btnUndo", intenta codificar una función callback 
+            para que pueda realizar la función de establecer el encabezado a un título anterior
+
+        4.  Habilita el botón "btnUndo" una vez que se hayan establecido al menos 2 títulos
+                *   Puedes usar un contador para saber cuantas veces se han establecido
+                    así podrás saber cuando desbloquear el botón
+        */
+       let cont=0;
+        const btnActualizacion = document.getElementById('btnActualizacion')
+        const tituloEncabezado = document.getElementById('encabezado')
+        const inputEncabezado = document.getElementById('inputEncabezado')
+        const btnUndo = document.getElementById('btnUndo')
+
+        
+        btnActualizacion.addEventListener('click',modificarEncabezado);
+        function modificarEncabezado() {
+            var lastTitle=tituloEncabezado.innerText;
+            console.log("last ",lastTitle);
+            tituloEncabezado.innerText=inputEncabezado.value;
+
+            
+            if(cont>2)
+            {
+                btnUndo.addEventListener('click',modificarEncabezado(lastTitle));
+                btnUndo.removeAttribute("disabled");
+            }
+            cont=cont+1;
+        }
+
+        function lastTitle(tituloAnterior){
+            tituloEncabezado.innerText=tituloAnterior;
+        }
+    </script>
+</body>
+
+</html>
