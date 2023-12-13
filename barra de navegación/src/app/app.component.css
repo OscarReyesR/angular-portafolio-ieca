@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  height: 100vh; /* 100% de la altura de la ventana */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #1b5be4, #e74c3c); /* Fondo inicial */
+
+}
+ul li a{
+  color: white;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
