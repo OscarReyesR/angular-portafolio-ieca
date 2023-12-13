@@ -1,0 +1,116 @@
+.active-daily {
+    display: grid;
+    background-color: rgba(7, 65, 58, 0.85);
+    margin: 0 auto 10px auto;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  
+  .active-daily .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+  }
+  
+  .active-daily .header .emotion span {
+    font-size: 3rem;
+    line-height: 50px; /* Alinea verticalmente el contenido en el centro */
+    display: inline-block; /* Permite ajustar el ancho y alto */
+    text-align: center; /* Alinea horizontalmente el contenido en el centro */
+  }
+  
+  .active-daily .header .emotion select {
+    margin-left: 3px;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(12, 126, 113);
+    border: none;
+    transform-origin: center;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .active-daily .header .emotion select:focus {
+    border: none;
+  }
+  
+  .active-daily .header .emotion select option {
+    background-color: rgba(9, 99, 89, 0.85);
+  }
+  
+  .active-daily .header .date {
+    color: rgba(255,255,255,0.65);
+  }
+  
+  .active-daily .note {
+    display: grid;
+    max-width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .active-daily .note textarea {
+    resize: vertical;
+    min-height: 120px;
+    max-height: 200px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+  
+  .active-daily .note textarea::placeholder {
+    color: #fff;
+  }
+  
+  .active-daily .note textarea:active, .active-daily .note textarea:focus  {
+    border: none;
+  }
+  
+  .active-daily .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .active-daily .actions button {
+    width: 50px;
+    justify-self: end;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 5px;
+    border: 1px outset buttonface;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    background-color: rgba(1, 119, 105, 0.7);
+  }
+  
+  .active-daily .actions button.valid {
+    transition: transform 0.2s ease;
+  }
+  
+  .active-daily .actions button.valid:active {
+    border-style: inset;
+    transform: scale(0.95);
+  }
+  
+  /* medium-devices and large-devices (tablets) */
+  @media screen and (min-width: 40em) {
+    .active-daily {
+      width: 70%;
+      gap: 0px;
+    }
+  
+    .active-daily .header .emotion select {
+      margin-left: 7px;
+    }
+  }

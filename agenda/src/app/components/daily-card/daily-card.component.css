@@ -1,0 +1,26 @@
+.daily-card {
+    display: grid;
+    background-color: rgba(223, 162, 83, 0.9);
+    min-height: 150px;
+    height: 25vh;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 5px;
+    grid-template-rows: auto 2fr auto;
+  }
+  
+  .daily-card .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    overflow: hidden;
+  }
+  
+  .daily-card .resume {
+    display: grid;
+    grid-template-rows: auto;
+    border: 1px solid gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+  }

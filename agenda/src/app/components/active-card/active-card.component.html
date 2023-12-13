@@ -1,0 +1,35 @@
+<div class="active-daily">
+  <form [formGroup]="formDaily" (ngSubmit)="saveDaily()">
+    <div class="header">
+      <div class="emotion">
+        <select *ngIf="checkEmotion(); else showEmotion" formControlName="emotion">
+          <option
+            *ngFor="let option of emotionsCollection"
+            [value]="option">
+            {{ option }}
+          </option>
+        </select>
+        <ng-template #showEmotion>
+          <span (click)="changeEmotion()"> {{ emotionField?.value }} </span>
+        </ng-template>
+      </div>
+      <div class="date">
+        {{ formDaily.get("Date")?.value | date: 'short' }} {{ formDaily.get("emotion")?.value }}
+      </div>
+    </div>
+
+    <div class="note">
+      <textarea
+        placeholder="Añade una nota..."
+        formControlName="notes"
+      >
+      </textarea>
+
+    </div>
+
+    <div class="actions">
+      <span> {{ noteField?.value.length }}</span>
+      <button type="submit" [disabled]="formDaily.invalid" [class.valid]="formDaily.valid">💾</button>
+    </div>
+  </form>
+</div>

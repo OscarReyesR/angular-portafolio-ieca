@@ -1,0 +1,6 @@
+<div class="daily-wrapper">
+  <app-active-daily-card (nuevoDaily)="handlerCompletedDaily($event)"></app-active-daily-card>
+  <div class="dailies">
+    <app-daily-card *ngFor="let daily of myDailies" [estatusDelDia]="daily"></app-daily-card>
+  </div>
+</div>
